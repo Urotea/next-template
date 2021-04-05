@@ -1,6 +1,8 @@
+import { NextPage } from 'next';
 import Head from 'next/head';
+import * as React from 'react';
 
-export default function Home() {
+export const Index: NextPage = () => {
   return (
     <div className="container">
       <Head>
@@ -47,7 +49,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
       <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -58,8 +59,7 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
-
-      <style jsx>{`
+      <style>{`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -189,8 +189,7 @@ export default function Home() {
           }
         }
       `}</style>
-
-      <style jsx global>{`
+      <style>{`
         html,
         body {
           padding: 0;
@@ -206,4 +205,6 @@ export default function Home() {
       `}</style>
     </div>
   );
-}
+};
+
+export default Index;

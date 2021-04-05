@@ -1,0 +1,22 @@
+name: ci lint
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: yarn install, eslint, tsc
+        run: |
+          yarn
+          yarn check-types
+          yarn eslint
