@@ -4,6 +4,8 @@ import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { FC } from 'react';
+import { Provider } from 'react-redux';
+import store from '../store';
 import theme from '../theme';
 
 // tslint:disable-next-line variable-name
@@ -12,7 +14,7 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
   //   return state.global.user
   // });
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <title>Next-Template</title>
         <link rel="icon" href="/favicon.ico" />
@@ -25,7 +27,7 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>
-    </>
+    </Provider>
   );
 };
 

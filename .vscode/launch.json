@@ -1,0 +1,33 @@
+/*
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Next: Node",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}/src",
+      "port": 9229
+    },
+    {
+      // For client side rendering debug
+      "type": "chrome",
+      "request": "launch",
+      "name": "Next: Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/src/*"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Next: Full",
+      "configurations": ["Next: Node", "Next: Chrome"]
+    }
+  ]
+}
+*/

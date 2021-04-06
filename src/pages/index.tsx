@@ -1,7 +1,13 @@
 import { NextPage } from 'next';
 import * as React from 'react';
+import { useAppSelector } from '../hooks';
+import { RootState } from '../store';
 
 export const Index: NextPage = () => {
+  const state = useAppSelector(
+    (state: RootState) => state.rootReducers.app.login
+  );
+
   return (
     <div className="container">
       <main>
