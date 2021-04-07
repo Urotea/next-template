@@ -1,6 +1,8 @@
 import {
   AppBar,
+  Avatar,
   Box,
+  Button,
   Drawer,
   IconButton,
   makeStyles,
@@ -15,6 +17,12 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MainMenu from './MainMenu';
 
 const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+  },
   drawer: {
     width: 240,
   },
@@ -28,10 +36,9 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface Props {
   title?: string;
-  className?: string;
 }
 
-const MenuAppBar: React.FC<Props> = ({ children, title, className }) => {
+const MenuAppBar: React.FC<Props> = ({ children, title }) => {
   const classes = useStyles();
   const [isOpen, setOpen] = React.useState(false);
   const handleDrawerClose = () => setOpen(false);
@@ -39,7 +46,8 @@ const MenuAppBar: React.FC<Props> = ({ children, title, className }) => {
   const onClose = () => setOpen(false);
 
   return (
-    <AppBar position="static">
+    <Box className={classes.root}>
+    <AppBar position="static" >
       <Drawer open={isOpen} onClose={onClose} className={classes.drawer}>
         <Box display="flex" justifyContent="flex-end">
           <IconButton onClick={handleDrawerClose}>
@@ -58,11 +66,13 @@ const MenuAppBar: React.FC<Props> = ({ children, title, className }) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" className={className}>
+        <Typography variant="h6" className={classes.title}>
           {title}
         </Typography>
+        <Avatar>H</Avatar>
       </Toolbar>
     </AppBar>
+    </Box>
   );
 };
 
