@@ -1,21 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { JWT } from '../../models/jwt';
 
 export type AppState = {
-    login: boolean,
+  jwt: JWT | null;
 };
 
 export const initialState: AppState = {
-    login: false,
+  jwt: null,
 };
 
 const appSlice = createSlice({
   name: 'app',
   initialState,
-  reducers: {
-      loginButtonTapped: (state) => {
-        state.login = true;
-      },
-  },
+  reducers: {},
 });
 
-export default appSlice.reducer;
+export const appReducer = appSlice.reducer;
+export const appActions = appSlice.actions;

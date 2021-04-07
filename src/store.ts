@@ -1,15 +1,20 @@
-import { combineReducers, configureStore, getDefaultMiddleware, Store } from '@reduxjs/toolkit';
+import {
+  combineReducers,
+  configureStore,
+  getDefaultMiddleware,
+  Store,
+} from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import appReducer from './feature/global/appReducer';
+import { appReducer } from './feature/global/appSlice';
 
 const rootReducers = combineReducers({
-    app: appReducer,
-})
+  app: appReducer,
+});
 
 const middleware = [...getDefaultMiddleware(), logger];
 const store = configureStore({
-    reducer: { rootReducers },
-    middleware: middleware,
+  reducer: { rootReducers },
+  middleware: middleware,
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
