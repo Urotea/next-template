@@ -5,7 +5,6 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { FC } from 'react';
 import { Provider } from 'react-redux';
-import { UserAuthController } from '../container/UserAuthController';
 import store from '../store';
 import theme from '../theme';
 
@@ -21,9 +20,7 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Container>
-          <Component {...pageProps} />
-        </Container>
+        <Component {...pageProps} />
       </ThemeProvider>
     </Provider>
   );

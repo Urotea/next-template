@@ -18,8 +18,8 @@
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "dbaeumer.vscode-eslint",
-    "tabnine.tabnine-vscode",
-    "esbenp.prettier-vscode"
+    "tabnine.tabnine-vscode"
+    // "esbenp.prettier-vscode"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
