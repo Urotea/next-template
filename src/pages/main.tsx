@@ -1,8 +1,9 @@
 import { Box, makeStyles, Theme } from '@material-ui/core';
 import { NextPage } from 'next';
+import { Router, useRouter } from 'next/router';
 import React from 'react';
 import MenuAppBar from '../presentation/organisms/MenuAppBar';
-import ServerPaginationGrid from '../presentation/organisms/ServerPaginationGrid';
+import ServerPaginationGrid from '../presentation/pages/main/ServerPaginationGrid';
 import MainTemplate from '../presentation/template/MainTemplate';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -13,8 +14,9 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const Main: NextPage = () => {
   const classes = useStyles();
-  const onCellClick = (id: string) => {
-    console.log(id);
+  const router = useRouter();
+  const onRowClick = (id: string) => {
+    router.push(`/main/${id}`);
   };
 
   return (
@@ -25,7 +27,7 @@ const Main: NextPage = () => {
         justifyContent="center"
         className={classes.main}
       >
-        <ServerPaginationGrid onCellClick={onCellClick} />
+        <ServerPaginationGrid onRowClick={onRowClick} />
       </Box>
     </MainTemplate>
   );

@@ -5,9 +5,10 @@ import {
   GridColumns,
   GridPageChangeParams,
   GridCellParams,
+  GridRowParams,
 } from '@material-ui/data-grid';
 import useSWR from 'swr';
-import { User } from '../../models/user';
+import { User } from '../../../models/user';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { Box } from '@material-ui/core';
 
@@ -24,10 +25,10 @@ const columns: GridColumns = [
 ];
 
 interface Props {
-  onCellClick?: (id: string) => void;
+  onRowClick?: (id: string) => void;
 }
 
-const ServerPaginationGrid: React.FC<Props> = ({ onCellClick }) => {
+const ServerPaginationGrid: React.FC<Props> = ({ onRowClick: onCellClick }) => {
   const [page, setPage] = React.useState(0);
 
   const { data, error, isValidating } = useSWR<GridRowsProp, AxiosError<Error>>(
@@ -39,14 +40,19 @@ const ServerPaginationGrid: React.FC<Props> = ({ onCellClick }) => {
     setPage(params.page);
   };
 
-  const handleCellClick = (
-    params: GridCellParams,
+  const handleRowClick = (
+    params: GridRowParams,
     event: React.MouseEvent<Element, MouseEvent>
   ): void => {
-    if (typeof params.row.id === 'number') {
-      onCellClick(params.row.id.toString());
+    if (onCellClick == null) {
+      console.log(params);
+      return;
+    }
+
+    if (typeof params.id === 'number') {
+      onCellClick(params.id.toString());
     } else {
-      onCellClick(params.row.id);
+      onCellClick(params.id);
     }
   };
 
@@ -60,7 +66,7 @@ const ServerPaginationGrid: React.FC<Props> = ({ onCellClick }) => {
         rowCount={100}
         paginationMode="server"
         onPageChange={handlePageChange}
-        onCellClick={handleCellClick}
+        onRowClick={handleRowClick}
         loading={isValidating}
         error={error}
       />
