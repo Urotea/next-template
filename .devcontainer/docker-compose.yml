@@ -1,0 +1,23 @@
+version: '3'
+services:
+  next:
+    build:
+      context: "."
+    command: sleep infinity
+    ports:
+    - 3000:3000
+    volumes:
+    - ../:/workspace/next-template
+    - /workspace/next-template/node_modules
+  database:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - db-store:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=next
+      - POSTGRES_USER=next
+      - POSTGRES_PASSWORD=password
+volumes:
+  db-store:
