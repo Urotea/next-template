@@ -1,0 +1,12 @@
+type Query {
+  hello: HelloResponse!
+  search(query: String!): SearchResponse!
+}
+
+type HelloResponse {
+  message: String!
+}
+
+type SearchResponse {
+  result: String!
+}
