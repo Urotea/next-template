@@ -1,15 +1,29 @@
 import { ApolloServer, Config } from "apollo-server-micro";
 import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
+import { Resolvers } from "@/generated/graphql";
 
-const resolvers: Resolvers = {};
+const resolvers: Resolvers = {
+  Query: {
+    hello(parent, args, context, info) {
+      return {
+        message: "Hello world",
+      };
+    },
+    search(parent, args, context, info) {
+      return {
+        result: `param is ${args.query}`,
+      };
+    },
+  },
+};
 
 const serverConfig: Config = {
   typeDefs: fs.readFileSync(process.cwd() + "/graphql/schema.graphql", {
     encoding: "utf8",
   }),
   resolvers: resolvers,
-  context: async ({ req }) => {
+  context: ({ req }) => {
     return null;
   },
 };

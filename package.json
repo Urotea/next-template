@@ -18,6 +18,8 @@
     "@mui/material": "^5.9.0",
     "apollo-server-micro": "^3.10.0",
     "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "micro": "^9.4.0",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
