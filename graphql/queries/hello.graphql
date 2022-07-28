@@ -1,5 +1,0 @@
-query hello {
-  hello {
-    message
-  }
-}

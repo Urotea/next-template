@@ -22,7 +22,8 @@
     "micro": "^9.4.0",
     "next": "12.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swr": "^1.3.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.8.1",

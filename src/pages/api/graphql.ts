@@ -3,17 +3,56 @@ import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import { Resolvers } from "@/generated/graphql";
 
+const getLibraries = async (): Promise<{ branch: string }[]> => {
+  return [
+    {
+      branch: "downtown",
+    },
+    {
+      branch: "riverside",
+    },
+  ];
+};
+
+const getBooks = async (): Promise<{ title: string }[]> => {
+  return [
+    {
+      title: "hoge",
+    },
+    {
+      title: "fuga",
+    },
+  ];
+};
+
+const getAuthor = async (): Promise<{ name: string }[]> => {
+  return [
+    {
+      name: "name1",
+    },
+    {
+      name: "name2",
+    },
+  ];
+};
+
 const resolvers: Resolvers = {
   Query: {
-    hello(parent, args, context, info) {
-      return {
-        message: "Hello world",
-      };
+    libraries: (parent, args, context, info) => {
+      console.log("query.libraries", parent);
+      return getLibraries();
     },
-    search(parent, args, context, info) {
-      return {
-        result: `param is ${args.query}`,
-      };
+  },
+  Library: {
+    books: async (parent, args, context, info) => {
+      console.log("library.books", parent);
+      return getBooks();
+    },
+  },
+  Book: {
+    author: async (parent, args, context, info) => {
+      console.log("book.author", parent);
+      return getAuthor();
     },
   },
 };

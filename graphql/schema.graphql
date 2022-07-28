@@ -1,12 +1,20 @@
 type Query {
-  hello: HelloResponse!
-  search(query: String!): SearchResponse!
+  libraries: [Library!]!
 }
 
-type HelloResponse {
-  message: String!
+# A library has a branch and books
+type Library {
+  branch: String!
+  books: [Book!]!
 }
 
-type SearchResponse {
-  result: String!
+# A book has a title and author
+type Book {
+  title: String!
+  author: Author!
+}
+
+# An author has a name
+type Author {
+  name: String!
 }
