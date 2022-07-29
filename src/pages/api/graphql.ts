@@ -25,33 +25,28 @@ const getBooks = async (): Promise<{ title: string }[]> => {
   ];
 };
 
-const getAuthor = async (): Promise<{ name: string }[]> => {
-  return [
-    {
-      name: "name1",
-    },
-    {
-      name: "name2",
-    },
-  ];
+const getAuthor = async (): Promise<{ name: string }> => {
+  return {
+    name: "name1",
+  };
 };
 
 const resolvers: Resolvers = {
   Query: {
     libraries: (parent, args, context, info) => {
-      console.log("query.libraries", parent);
+      console.log("query.libraries.parent", parent);
       return getLibraries();
     },
   },
   Library: {
     books: async (parent, args, context, info) => {
-      console.log("library.books", parent);
+      console.log("library.books.parent", parent);
       return getBooks();
     },
   },
   Book: {
     author: async (parent, args, context, info) => {
-      console.log("book.author", parent);
+      console.log("book.author.parent", parent);
       return getAuthor();
     },
   },

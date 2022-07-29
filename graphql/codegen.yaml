@@ -8,3 +8,5 @@ generates:
       - typescript-resolvers
       - typescript-operations
       - typescript-graphql-request
+    config:
+      defaultMapper: Partial<{T}>
