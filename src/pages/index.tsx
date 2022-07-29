@@ -1,28 +1,36 @@
 import type { NextPage } from "next";
-import { Box, TextField } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import useLibraries from "@/hooks/useLibraries";
 
 const Home: NextPage = () => {
   const { data } = useLibraries();
 
-  const names = data?.libraries
-    ?.flatMap((library) => library.books)
-    .map((book) => book.author)
-    .map((author) => author.name);
+  const libraries = data?.libraries.map((library) => {
+    return (
+      <Box
+        key={library.branch}
+        mt="10px"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Typography>branch: {library.branch}</Typography>
+        <Box>
+          {library.books.map((book) => {
+            return (
+              <Box key={book.title}>
+                <Typography>book title: {book.title}</Typography>
+                <Typography>book author: {book.author.name}</Typography>
+              </Box>
+            );
+          })}
+        </Box>
+      </Box>
+    );
+  });
 
   return (
     <Box textAlign="center" mt="10px">
-      {names?.map((name) => (
-        <Box
-          key={name}
-          mt="10px"
-          alignItems="center"
-          justifyContent="center"
-          display="flex"
-        >
-          <TextField label="Search" size="small" value="a" />
-        </Box>
-      ))}
+      {libraries}
     </Box>
   );
 };
