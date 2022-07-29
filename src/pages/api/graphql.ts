@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import { Resolvers } from "@/generated/graphql";
 
+// DBから取る処理をmockしている
 const getLibraries = async (): Promise<{ branch: string }[]> => {
   return [
     {
@@ -14,6 +15,7 @@ const getLibraries = async (): Promise<{ branch: string }[]> => {
   ];
 };
 
+// DBから取る処理をmockしている
 const getBooks = async (): Promise<{ title: string }[]> => {
   return [
     {
@@ -25,6 +27,7 @@ const getBooks = async (): Promise<{ title: string }[]> => {
   ];
 };
 
+// DBから取る処理をmockしている
 const getAuthor = async (): Promise<{ name: string }> => {
   return {
     name: "name1",
@@ -34,20 +37,30 @@ const getAuthor = async (): Promise<{ name: string }> => {
 const resolvers: Resolvers = {
   Query: {
     libraries: (parent, args, context, info) => {
-      console.log("query.libraries.parent", parent);
+      console.log("query.libraries.parent", parent, args, context);
       return getLibraries();
     },
   },
   Library: {
     books: async (parent, args, context, info) => {
-      console.log("library.books.parent", parent);
+      console.log("library.books.parent", parent, args, context);
       return getBooks();
     },
   },
   Book: {
     author: async (parent, args, context, info) => {
-      console.log("book.author.parent", parent);
-      return getAuthor();
+      console.log("book.author.parent", parent, args, context);
+      return {};
+    },
+  },
+  Author: {
+    name: async (parent, args, context, info) => {
+      console.log("author.name.parent", parent, args, context);
+      return "name1";
+    },
+    age: async (parent, args, context, info) => {
+      console.log("author.age.parent", parent, args, context);
+      return 24;
     },
   },
 };

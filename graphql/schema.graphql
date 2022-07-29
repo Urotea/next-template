@@ -17,4 +17,5 @@ type Book {
 # An author has a name
 type Author {
   name: String!
+  age: Int!
 }
