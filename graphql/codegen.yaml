@@ -9,4 +9,5 @@ generates:
       - typescript-operations
       - typescript-graphql-request
     config:
-      defaultMapper: Partial<{T}>
+      avoidOptionals: true # defualt false
+      preResolveTypes: true # default true

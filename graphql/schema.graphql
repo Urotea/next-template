@@ -1,21 +1,27 @@
 type Query {
   libraries: [Library!]!
+  library(id: String!): Library!
 }
 
 # A library has a branch and books
 type Library {
-  branch: String!
-  books: [Book!]!
+  id: String!
+  branch: String
+  bookIds: [String!]
+  books: [Book!]
 }
 
 # A book has a title and author
 type Book {
-  title: String!
-  author: Author!
+  id: String!
+  title: String
+  authorId: String
+  author: Author
 }
 
 # An author has a name
 type Author {
-  name: String!
-  age: Int!
+  id: String!
+  name: String
+  age: Int
 }

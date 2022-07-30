@@ -2,65 +2,78 @@ import { ApolloServer, Config } from "apollo-server-micro";
 import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import { Resolvers } from "@/generated/graphql";
-
-// DBから取る処理をmockしている
-const getLibraries = async (): Promise<{ branch: string }[]> => {
-  return [
-    {
-      branch: "downtown",
-    },
-    {
-      branch: "riverside",
-    },
-  ];
-};
-
-// DBから取る処理をmockしている
-const getBooks = async (): Promise<{ title: string }[]> => {
-  return [
-    {
-      title: "hoge",
-    },
-    {
-      title: "fuga",
-    },
-  ];
-};
-
-// DBから取る処理をmockしている
-const getAuthor = async (): Promise<{ name: string }> => {
-  return {
-    name: "name1",
-  };
-};
+import Repository from "@/repository";
+import createBook from "@/utils/createBook";
+import createAuthor from "@/utils/createAuthor";
+import createLibrary from "@/utils/createLibrary";
 
 const resolvers: Resolvers = {
   Query: {
-    libraries: (parent, args, context, info) => {
-      console.log("query.libraries.parent", parent, args, context);
-      return getLibraries();
+    libraries: (parent, args, context: { repository: Repository }, info) => {
+      console.log("query.libraries called");
+      return context.repository
+        .listLibraryIds()
+        .then((ids) => ids.map((id) => createLibrary(id)));
+    },
+    library: (parent, args, context: { repository: Repository }, info) => {
+      console.log("query.library called");
+      return context.repository.getLibrary(args.id);
     },
   },
   Library: {
-    books: async (parent, args, context, info) => {
-      console.log("library.books.parent", parent, args, context);
-      return getBooks();
+    id: (parent, args, context: { repository: Repository }, info) => {
+      console.log("library.id called", parent);
+      return parent.id;
+    },
+    branch: (parent, args, context: { repository: Repository }, info) => {
+      console.log("library.branch called", parent);
+      return context.repository.getLibrary(parent.id).then((l) => l.branch);
+    },
+    bookIds: (parent, args, context: { repository: Repository }, info) => {
+      console.log("library.bookIds called", parent);
+      return context.repository.getLibrary(parent.id).then((l) => l.bookIds);
+    },
+    books: async (parent, args, context: { repository: Repository }, info) => {
+      console.log("library.books called", parent);
+      const ids = await context.repository
+        .getLibrary(parent.id)
+        .then((l) => l.bookIds!);
+      return ids.map((id) => createBook(id));
     },
   },
   Book: {
-    author: async (parent, args, context, info) => {
-      console.log("book.author.parent", parent, args, context);
-      return {};
+    id: (parent, args, context: { repository: Repository }, info) => {
+      console.log("book.id called", parent);
+      return parent.id;
+    },
+    title: (parent, args, context: { repository: Repository }, info) => {
+      console.log("book.title called", parent);
+      return context.repository.getBook(parent.id).then((b) => b.title);
+    },
+    authorId: (parent, args, context: { repository: Repository }, info) => {
+      console.log("book.authorId called", parent);
+      return context.repository.getBook(parent.id).then((b) => b.authorId);
+    },
+    author: async (parent, args, context: { repository: Repository }, info) => {
+      console.log("book.author called", parent);
+      const authorId = await context.repository
+        .getBook(parent.id)
+        .then((b) => b.authorId!);
+      return createAuthor(authorId);
     },
   },
   Author: {
-    name: async (parent, args, context, info) => {
-      console.log("author.name.parent", parent, args, context);
-      return "name1";
+    id: (parent, args, context: { repository: Repository }, info) => {
+      console.log("author.id called", parent);
+      return parent.id;
     },
-    age: async (parent, args, context, info) => {
-      console.log("author.age.parent", parent, args, context);
-      return 24;
+    name: async (parent, args, context: { repository: Repository }, info) => {
+      console.log("author.name called", parent);
+      return context.repository.getAuthor(parent.id).then((a) => a.name);
+    },
+    age: async (parent, args, context: { repository: Repository }, info) => {
+      console.log("author.age called", parent);
+      return context.repository.getAuthor(parent.id).then((a) => a.age);
     },
   },
 };
@@ -71,7 +84,8 @@ const serverConfig: Config = {
   }),
   resolvers: resolvers,
   context: ({ req }) => {
-    return null;
+    const repository = new Repository();
+    return { repository };
   },
 };
 
