@@ -2,13 +2,15 @@ import { ApolloServer, Config } from "apollo-server-micro";
 import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import { Resolvers } from "@/generated/graphql";
-import Repository from "@/repository";
 import queryResolver from "@/graphql/server/resolvers/queryResolver";
 import userResponseResolver from "@/graphql/server/resolvers/userResponseResolver";
 import teamsResponseResolver from "@/graphql/server/resolvers/teamsResponseResolver";
 import teamResolver from "@/graphql/server/resolvers/teamResolver";
 import todoResolver from "@/graphql/server/resolvers/todoResolver";
 import userResolver from "@/graphql/server/resolvers/userResolver";
+import UserRepository from "@/graphql/server/repositories/UserRepository";
+import { Context } from "@/graphql/server/context";
+import TodoRepository from "@/graphql/server/repositories/TodoRepository";
 
 const resolvers: Resolvers = {
   Query: queryResolver,
@@ -24,9 +26,11 @@ const serverConfig: Config = {
     encoding: "utf8",
   }),
   resolvers: resolvers,
-  context: ({ req }) => {
-    const repository = new Repository();
-    return { repository };
+  context: ({ req }): Context => {
+    const userRepository = new UserRepository();
+    const todoRepository = new TodoRepository();
+
+    return { userRepository, todoRepository };
   },
 };
 

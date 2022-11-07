@@ -1,5 +1,7 @@
-import Repository from "@/repository";
+import UserRepository from "@/graphql/server/repositories/UserRepository";
+import TodoRepository from "@/graphql/server/repositories/TodoRepository";
 
 export type Context = {
-  repository: Repository;
+  userRepository: UserRepository;
+  todoRepository: TodoRepository;
 };
