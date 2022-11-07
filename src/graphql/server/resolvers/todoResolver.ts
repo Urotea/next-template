@@ -14,8 +14,13 @@ const todoResolver: TodoResolvers<Context> = {
     }
     return backendTodo.detail;
   },
-  owner: (parent, args, context, info) => {
-    throw new Error("Function not implemented.");
+  owner: async (parent, args, context, info) => {
+    const backendTodo = await context.todoRepository.getBackendTodo(parent.id);
+    if (backendTodo instanceof ServiceError) {
+      console.error("todoResolver.detail", backendTodo);
+      return null;
+    }
+    return { id: backendTodo.ownerUserId };
   },
   state: async (parent, args, context, info) => {
     const backendTodo = await context.todoRepository.getBackendTodo(parent.id);
