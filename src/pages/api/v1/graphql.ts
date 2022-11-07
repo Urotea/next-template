@@ -11,6 +11,7 @@ import userResolver from "@/graphql/server/resolvers/userResolver";
 import UserRepository from "@/graphql/server/repositories/UserRepository";
 import { Context } from "@/graphql/server/context";
 import TodoRepository from "@/graphql/server/repositories/TodoRepository";
+import TeamRepository from "@/graphql/server/repositories/TeamRepository";
 
 const resolvers: Resolvers = {
   Query: queryResolver,
@@ -29,8 +30,9 @@ const serverConfig: Config = {
   context: ({ req }): Context => {
     const userRepository = new UserRepository();
     const todoRepository = new TodoRepository();
+    const teamRepository = new TeamRepository();
 
-    return { userRepository, todoRepository };
+    return { userRepository, todoRepository, teamRepository };
   },
 };
 

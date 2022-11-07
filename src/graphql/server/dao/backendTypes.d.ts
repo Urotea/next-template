@@ -11,3 +11,8 @@ export type BackendTodo = {
   detail: string;
   state: "todo" | "doing" | "done";
 };
+
+export type BackendTeam = {
+  id: string;
+  name: string;
+};
