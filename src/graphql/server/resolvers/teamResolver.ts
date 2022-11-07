@@ -14,8 +14,14 @@ const teamResolver: TeamResolvers<Context> = {
     }
     return backendTeam.name;
   },
-  members: (parent, args, context, info) => {
-    throw new Error("Function not implemented.");
+  members: async (parent, args, context, info) => {
+    const backendTeamMemberIds =
+      await context.teamRepository.getBackendTeamMemberIds(parent.id);
+    if (backendTeamMemberIds instanceof ServiceError) {
+      console.error("teamResolver.members", backendTeamMemberIds);
+      return [];
+    }
+    return backendTeamMemberIds.map((id) => ({ id }));
   },
 };
 

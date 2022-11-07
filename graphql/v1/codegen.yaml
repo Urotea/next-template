@@ -10,8 +10,10 @@ generates:
       - typescript-operations
       - typescript-graphql-request
     config:
-      avoidOptionals: true # defualt false
-      preResolveTypes: true # default true
+      skipTypename: true
+      skipTypeNameForRoot: true
+      preResolveTypes: false
+      arrayInputCoercion: false
+      defaultScalarType: unknown
       contextType: ../graphql/server/context#Context
       enumsAsConst: true
-      skipTypeNameForRoot: true
