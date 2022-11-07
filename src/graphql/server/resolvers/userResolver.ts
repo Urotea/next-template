@@ -22,11 +22,24 @@ const userResolver: UserResolvers<Context> = {
     }
     return backendUser.age;
   },
-  memberOf: (parent, args, context, info) => {
-    throw new Error("Function not implemented.");
+  memberOf: async (parent, args, context, info) => {
+    const backendTeamIds =
+      await context.userRepository.getBackendUserMemberOfTeamIds(parent.id);
+    if (backendTeamIds instanceof ServiceError) {
+      console.error("userResolver.memberOf", backendTeamIds);
+      return [];
+    }
+    return backendTeamIds.map((id) => ({ id }));
   },
-  todos: (parent, args, context, info) => {
-    throw new Error("Function not implemented.");
+  todos: async (parent, args, context, info) => {
+    const backendTodoIds = await context.userRepository.getBackendTodoIds(
+      parent.id
+    );
+    if (backendTodoIds instanceof ServiceError) {
+      console.error("userResolver.todos", backendTodoIds);
+      return [];
+    }
+    return backendTodoIds.map((id) => ({ id }));
   },
 };
 
