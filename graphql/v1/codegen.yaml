@@ -1,4 +1,5 @@
-schema: "graphql/v1/schema.graphql"
+schema:
+  - "graphql/v1/schema/query.graphql"
 documents:
   - "graphql/v1/queries/**/*.graphql"
 generates:
@@ -11,3 +12,6 @@ generates:
     config:
       avoidOptionals: true # defualt false
       preResolveTypes: true # default true
+      contextType: ../graphql/server/context#Context
+      enumsAsConst: true
+      skipTypeNameForRoot: true

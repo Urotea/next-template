@@ -1,0 +1,46 @@
+type Query {
+  user(id: String!): UserResponse!
+  # TODO: pagenation
+  teams: TeamsResponse!
+}
+
+# response type
+
+type UserResponse {
+  user: User
+}
+
+type TeamsResponse {
+  # TODO: pagenation
+  teams: [Team!]!
+}
+
+# base type
+
+type Team {
+  id: String!
+  name: String
+  members: [User!]
+}
+
+type User {
+  id: String!
+  name: String
+  age: Int
+  todos: [Todo!]
+  memberOf: [Team!]
+}
+
+type Todo {
+  id: String!
+  owner: User
+  title: String
+  detail: String
+  state: TodoState
+}
+
+enum TodoState {
+  TODO
+  DOING
+  DONE
+}
