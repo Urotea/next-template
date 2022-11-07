@@ -1,6 +1,6 @@
-schema: "graphql/schema.graphql"
+schema: "graphql/v1/schema.graphql"
 documents:
-  - "graphql/queries/**/*.graphql"
+  - "graphql/v1/queries/**/*.graphql"
 generates:
   ./src/generated/graphql.ts:
     plugins:

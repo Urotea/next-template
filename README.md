@@ -1,5 +1,5 @@
 ## graphql
 
 ```sh
-yarn graphql-codegen -c ./graphql/codegen.yaml
+yarn graphql-codegen -c ./graphql/v1/codegen.yaml
 ```
