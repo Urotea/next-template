@@ -12,6 +12,7 @@ import UserRepository from "@/graphql/server/repositories/UserRepository";
 import { Context } from "@/graphql/server/context";
 import TodoRepository from "@/graphql/server/repositories/TodoRepository";
 import TeamRepository from "@/graphql/server/repositories/TeamRepository";
+import { API_URL } from "@/constant";
 
 const resolvers: Resolvers = {
   Query: queryResolver,
@@ -47,7 +48,7 @@ export default async function handler(
 ) {
   await startServer;
   await apolloServer.createHandler({
-    path: "/api/v1/graphql",
+    path: API_URL,
   })(req, res);
 }
 
