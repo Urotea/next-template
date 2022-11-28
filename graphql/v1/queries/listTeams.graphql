@@ -1,0 +1,8 @@
+query ListTeams {
+  teams {
+    teams {
+      id
+      name
+    }
+  }
+}

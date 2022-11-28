@@ -7,6 +7,7 @@ const teamResolver: TeamResolvers<Context> = {
     return parent.id;
   },
   name: async (parent, args, context, info) => {
+    console.debug("teamResolver.name", parent.id);
     const backendTeam = await context.teamRepository.getBackendTeam(parent.id);
     if (backendTeam instanceof ServiceError) {
       console.error("teamResolver.name", backendTeam);

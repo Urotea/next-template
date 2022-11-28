@@ -3,6 +3,7 @@ import { Context } from "@/graphql/server/context";
 
 const queryResolver: QueryResolvers<Context, {}> = {
   teams: (parent, args, context, info) => {
+    console.debug("queryResolver.teams");
     return {
       teams: [{ id: "1" }, { id: "2" }],
     };
