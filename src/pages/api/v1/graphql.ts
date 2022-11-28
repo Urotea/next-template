@@ -23,9 +23,11 @@ const resolvers: Resolvers = {
 };
 
 const serverConfig: Config = {
-  typeDefs: fs.readFileSync(process.cwd() + "/graphql/v1/schema.graphql", {
-    encoding: "utf8",
-  }),
+  typeDefs: [
+    fs.readFileSync(`${process.cwd()}/graphql/v1/schema/query.graphql`, {
+      encoding: "utf8",
+    }),
+  ],
   resolvers: resolvers,
   context: ({ req }): Context => {
     const userRepository = new UserRepository();

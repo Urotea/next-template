@@ -3,15 +3,13 @@ import { Context } from "@/graphql/server/context";
 
 const queryResolver: QueryResolvers<Context, {}> = {
   teams: (parent, args, context, info) => {
-    // TODO
     return {
-      teams: [],
+      teams: [{ id: "1" }, { id: "2" }],
     };
   },
   user: (parent, args, context, info) => {
-    // TODO
     return {
-      user: null,
+      user: { id: args.id },
     };
   },
 };
