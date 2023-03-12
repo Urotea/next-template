@@ -1,19 +1,13 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
 
   "dependencyDashboard": false,
 
   "requiredStatusChecks": null,
 
-  "schedule": [
-    "every 1 hour after 00:00 and before 23:59 every day"
-  ],
+  "schedule": ["every 1 hour after 00:00 and before 23:59 every day"],
 
-  "automergeSchedule": [
-    "every 1 hour after 00:00 and before 23:59 every day"
-  ],
+  "automergeSchedule": ["every 1 hour after 00:00 and before 23:59 every day"],
 
   "major": {
     "enabled": false

@@ -6,10 +6,7 @@ import { useMemo } from "react";
 import useSWR from "swr";
 
 const useMyTeams = (userId: string) => {
-  const graphqlSdk = useMemo(
-    () => getSdk(new GraphQLClient(`http://localhost:3000/${API_URL}`)),
-    []
-  );
+  const graphqlSdk = useMemo(() => getSdk(new GraphQLClient(API_URL)), []);
   const fetcher = () => graphqlSdk.ListTeams();
   const { data } = useSWR([print(ListTeamsDocument)], fetcher, {
     suspense: true,
