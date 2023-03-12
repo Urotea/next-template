@@ -10,9 +10,12 @@ type ButtonTypes =
   | "info"
   | "link";
 
+type ButtonSizes = "xs" | "sm" | "md" | "lg";
+
 type Props = {
   type?: ButtonTypes;
   outline?: boolean;
+  size?: ButtonSizes;
   children?: React.ReactNode;
 };
 
@@ -27,12 +30,26 @@ const buttonTypesName: { [key in ButtonTypes]: string } = {
   link: "btn-link",
 };
 
+const buttonSizesName: { [key in ButtonSizes]: string } = {
+  xs: "btn-xs",
+  sm: "btn-sm",
+  md: "",
+  lg: "btn-lg",
+};
+
 const CustomButton: React.FC<Props> = ({
   type = "normal",
   outline = false,
+  size = "md",
   children,
 }) => {
-  const cx = clsx("btn", "shadow-md", { outline }, buttonTypesName[type]);
+  const cx = clsx(
+    "btn",
+    "shadow-md",
+    { outline },
+    buttonTypesName[type],
+    buttonSizesName[size]
+  );
   return <button className={cx}>{children}</button>;
 };
 

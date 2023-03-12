@@ -4,7 +4,9 @@ const Page = () => {
   return (
     <>
       <h1>Hello, Next.js!</h1>
-      <CustomButton type="primary">Button</CustomButton>
+      <CustomButton type="primary" size="sm">
+        Button
+      </CustomButton>
     </>
   );
 };
