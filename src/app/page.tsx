@@ -1,8 +1,10 @@
+import CustomButton from "@/components/server/CustomButton";
+
 const Page = () => {
   return (
     <>
       <h1>Hello, Next.js!</h1>
-      <button className="btn btn-primary">Button</button>
+      <CustomButton type="primary">Button</CustomButton>
     </>
   );
 };
