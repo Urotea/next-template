@@ -15,8 +15,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: yarn install, eslint, tsc
+      - name: yarn install, lint
         run: |
           yarn
-          yarn check-types
-          yarn eslint
+          yarn lint
