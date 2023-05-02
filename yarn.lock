@@ -49,9 +49,9 @@
     "@apollo/utils.logger" "^2.0.0"
 
 "@apollo/server@^4.5.0":
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.7.0.tgz#213d6209aa22a2d63f0b3a812f079f56853ee5cb"
-  integrity sha512-qPfMnsHHA+U/F3dRAAlyiXWbTjM3U/KoMtS95OrfYKWXbeenW9R82nZISrI3D0cBIYICigZC3DrQVl9M5mYA+g==
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.7.1.tgz#3063fb8ca4a5a94cdf15f219811ac50c3e097b9f"
+  integrity sha512-rFxd8jsMlqEYzmhuxATaDAPoRH905R56FKP4TnZWaiDYJtjhHe3hxZOWl24V7s0dB52DIp6S/x+zjQX8fwD37w==
   dependencies:
     "@apollo/cache-control-types" "^1.0.2"
     "@apollo/server-gateway-interface" "^1.1.0"
@@ -1139,14 +1139,14 @@
     value-or-promise "1.0.12"
 
 "@graphql-tools/schema@^9.0.0":
-  version "9.0.18"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-9.0.18.tgz#f66dd5e76e1aba85904cb649fde88ae01718c45c"
-  integrity sha512-Kckb+qoo36o5RSIVfBNU5XR5fOg4adNa1xuhhUgbQejDaI684tIJbTWwYbrDPVEGL/dqJJX3rrsq7RLufjNFoQ==
+  version "9.0.19"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-9.0.19.tgz#c4ad373b5e1b8a0cf365163435b7d236ebdd06e7"
+  integrity sha512-oBRPoNBtCkk0zbUsyP4GaIzCt8C0aCI4ycIRUL67KK5pOHljKLBBtGT+Jr6hkzA74C8Gco8bpZPe7aWFjiaK2w==
   dependencies:
     "@graphql-tools/merge" "^8.4.1"
     "@graphql-tools/utils" "^9.2.1"
     tslib "^2.4.0"
-    value-or-promise "1.0.12"
+    value-or-promise "^1.0.12"
 
 "@graphql-tools/url-loader@7.17.14", "@graphql-tools/url-loader@^7.13.2", "@graphql-tools/url-loader@^7.9.7":
   version "7.17.14"
@@ -1526,13 +1526,14 @@
     "@types/node" "*"
 
 "@types/express-serve-static-core@^4.17.30", "@types/express-serve-static-core@^4.17.33":
-  version "4.17.33"
-  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.33.tgz#de35d30a9d637dc1450ad18dd583d75d5733d543"
-  integrity sha512-TPBqmR/HRYI3eC2E5hmiivIzv+bidAfXofM+sbonAGvyDhySGw9/PQZFt2BLOrjUUR++4eJVpx6KnLQK1Fk9tA==
+  version "4.17.34"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.34.tgz#c119e85b75215178bc127de588e93100698ab4cc"
+  integrity sha512-fvr49XlCGoUj2Pp730AItckfjat4WNb0lb3kfrLWffd+RLeoGAMsq7UOy04PAPtoL01uKwcp6u8nhzpgpDYr3w==
   dependencies:
     "@types/node" "*"
     "@types/qs" "*"
     "@types/range-parser" "*"
+    "@types/send" "*"
 
 "@types/express@^4.17.13":
   version "4.17.17"
@@ -1569,6 +1570,11 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-3.0.1.tgz#5f8f2bca0a5863cb69bc0b0acd88c96cb1d4ae10"
   integrity sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==
 
+"@types/mime@^1":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@types/mime/-/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
+  integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
+
 "@types/node-fetch@^2.6.1":
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.6.3.tgz#175d977f5e24d93ad0f57602693c435c57ad7e80"
@@ -1577,12 +1583,7 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*":
-  version "18.15.12"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.15.12.tgz#833756634e78c829e1254db006468dadbb0c696b"
-  integrity sha512-Wha1UwsB3CYdqUm2PPzh/1gujGCNtWVUYF0mB00fJFoR4gTyWTDPjSm+zBF787Ahw8vSGgBja90MkgFwvB86Dg==
-
-"@types/node@18.16.3":
+"@types/node@*", "@types/node@18.16.3":
   version "18.16.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.3.tgz#6bda7819aae6ea0b386ebc5b24bdf602f1b42b01"
   integrity sha512-OPs5WnnT1xkCBiuQrZA4+YAV4HEJejmHneyraIaxsbev5yCEr6KMwINNFP9wQeFIw8FWcoTqF3vQsa5CDaI+8Q==
@@ -1636,6 +1637,14 @@
   version "0.16.2"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
+"@types/send@*":
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/@types/send/-/send-0.17.1.tgz#ed4932b8a2a805f1fe362a70f4e62d0ac994e301"
+  integrity sha512-Cwo8LE/0rnvX7kIIa3QHCkcuF21c05Ayb0ZfxPiv0W8VRiZiNW/WuRupHKpqqGVGf7SUA44QSOUKaEd9lIrd/Q==
+  dependencies:
+    "@types/mime" "^1"
+    "@types/node" "*"
 
 "@types/serve-static@*":
   version "1.15.1"
