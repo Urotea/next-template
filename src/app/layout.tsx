@@ -1,7 +1,8 @@
-import "../../styles/globals.css";
+import "styles/globals.css";
 import { Inter } from "next/font/google";
-import NavBar from "@/components/server/NavBar";
-import Container from "@/components/server/Container";
+import NavBar from "@/app/_components/NavBar";
+import Container from "@/app/_components/Container";
+import Providers from "src/app/providers";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -44,10 +45,12 @@ export default function RootLayout({
 }) {
   return (
     <html data-theme="light" lang="ja" className={inter.className}>
-      <body>
-        <NavBar title="next-template" />
-        <Container>{children}</Container>
-      </body>
+      <Providers>
+        <body>
+          <NavBar title="next-template" />
+          <Container>{children}</Container>
+        </body>
+      </Providers>
     </html>
   );
 }

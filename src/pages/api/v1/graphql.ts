@@ -1,8 +1,6 @@
 import fs from "fs";
 import { Resolvers } from "@/generated/graphql";
 import queryResolver from "@/graphql/server/resolvers/queryResolver";
-import userResponseResolver from "@/graphql/server/resolvers/userResponseResolver";
-import teamsResponseResolver from "@/graphql/server/resolvers/teamsResponseResolver";
 import teamResolver from "@/graphql/server/resolvers/teamResolver";
 import todoResolver from "@/graphql/server/resolvers/todoResolver";
 import userResolver from "@/graphql/server/resolvers/userResolver";
@@ -11,11 +9,10 @@ import TodoRepository from "@/graphql/server/repositories/TodoRepository";
 import TeamRepository from "@/graphql/server/repositories/TeamRepository";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { ApolloServer, ApolloServerOptions, BaseContext } from "@apollo/server";
+import { NextApiRequest } from "next";
 
 const resolvers: Resolvers = {
   Query: queryResolver,
-  TeamsResponse: teamsResponseResolver,
-  UserResponse: userResponseResolver,
   Team: teamResolver,
   Todo: todoResolver,
   User: userResolver,
@@ -38,7 +35,7 @@ const serverConfig: ApolloServerOptions<ContextType> = {
 
 const apolloServer = new ApolloServer(serverConfig);
 
-export default startServerAndCreateNextHandler<ContextType>(apolloServer, {
+export default startServerAndCreateNextHandler<NextApiRequest, ContextType>(apolloServer, {
   context: async (req, res) => {
     const userRepository = new UserRepository();
     const todoRepository = new TodoRepository();

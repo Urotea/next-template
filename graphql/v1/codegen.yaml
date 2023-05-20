@@ -8,7 +8,7 @@ generates:
       - typescript
       - typescript-resolvers
       - typescript-operations
-      - typescript-graphql-request
+      - typescript-urql
     config:
       skipTypename: true
       skipTypeNameForRoot: true
