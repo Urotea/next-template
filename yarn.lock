@@ -59,9 +59,9 @@
     "@apollo/utils.logger" "^2.0.0"
 
 "@apollo/server@^4.5.0":
-  version "4.9.1"
-  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.9.1.tgz#dadad5f661db41260adecf0a5e3fa46f2232637e"
-  integrity sha512-uUzkHt7DU/NEdwMvkb4GZq8ho2EYJAJXTiBq0HUhhjOuxMVfZ7fbKgOIcSF33Ur7c67fLdWwulXMAvv89Cyv0w==
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.9.2.tgz#e2def7e8c7d8f841d5fd18e312360bc95ad383c8"
+  integrity sha512-DXARzsL7gvBfhUL2gTCpGduaH5wQFZi72/6ZOalpzT9InepIz0wL9TffSNVuaYla5u6JB9kX8WtnVUKf7IuHTA==
   dependencies:
     "@apollo/cache-control-types" "^1.0.3"
     "@apollo/server-gateway-interface" "^1.1.1"
@@ -1492,9 +1492,9 @@
     "@types/node" "*"
 
 "@types/express-serve-static-core@^4.17.30", "@types/express-serve-static-core@^4.17.33":
-  version "4.17.35"
-  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.35.tgz#c95dd4424f0d32e525d23812aa8ab8e4d3906c4f"
-  integrity sha512-wALWQwrgiB2AWTT91CB62b6Yt0sNHpznUXeZEcnPU3DRdlDIz74x8Qg1UUYKSVFi+va5vKOLYRBI1bRKiLLKIg==
+  version "4.17.36"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.36.tgz#baa9022119bdc05a4adfe740ffc97b5f9360e545"
+  integrity sha512-zbivROJ0ZqLAtMzgzIUC4oNqDG9iF0lSsAqpOD9kbs5xcIM3dTiyuHvBc7R8MtWBp3AAWGaovJa+wzWPjLYW7Q==
   dependencies:
     "@types/node" "*"
     "@types/qs" "*"
@@ -1555,9 +1555,9 @@
     form-data "^3.0.0"
 
 "@types/node@*":
-  version "20.4.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.7.tgz#74d323a93f1391a63477b27b9aec56669c98b2ab"
-  integrity sha512-bUBrPjEry2QUTsnuEjzjbS7voGWCc30W0qzgMf90GPeDGFRakvrz47ju+oqDAKCXLUCe39u57/ORMl/O/04/9g==
+  version "20.5.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.5.tgz#04461a93ca9f2ac8f76acd7e4c025bab70a1bfbd"
+  integrity sha512-c0Snqx/IpY+QHnCqEQzo9NjhBNth6gm6/4wDgWt1ML24ldNiStXmxuKJUKM7ob/iAhQWH/dUH1STRt5eTUixlw==
 
 "@types/node@18.17.9":
   version "18.17.9"
@@ -4453,9 +4453,9 @@ node-fetch@^2.6.1:
     whatwg-url "^5.0.0"
 
 node-fetch@^2.6.7:
-  version "2.6.12"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.12.tgz#02eb8e22074018e3d5a83016649d04df0e348fba"
-  integrity sha512-C/fGU2E8ToujUivIO0H+tpQ6HWo4eEmchoPIoXtxCrVghxdKq+QOHqEZW7tuP3KlV3bC8FRMO5nMCC7Zm1VP6g==
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.7.0.tgz#d0f0fa6e3e2dc1d27efcd8ad99d550bda94d187d"
+  integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
   dependencies:
     whatwg-url "^5.0.0"
 
