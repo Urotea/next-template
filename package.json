@@ -34,7 +34,7 @@
     "@graphql-codegen/typescript-resolvers": "^2.7.1",
     "@graphql-codegen/typescript-urql": "^3.7.3",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "18.17.10",
+    "@types/node": "18.17.11",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "^10.4.14",
