@@ -5495,9 +5495,9 @@ swap-case@^2.0.2:
     tslib "^2.0.3"
 
 swr@^2.1.0:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-2.2.2.tgz#abcb1f9c97e10527789884169d58b878472d4c98"
-  integrity sha512-CbR41AoMD4TQBQw9ic3GTXspgfM9Y8Mdhb5Ob4uIKXhWqnRLItwA5fpGvB7SmSw3+zEjb0PdhiEumtUvYoQ+bQ==
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-2.2.3.tgz#4cd1d276e8af9580ea7fc716666937dbbad8d0af"
+  integrity sha512-yzZkZSdemplWk/3lH+3/wSNIklKX1YrPveN06Obew2XXE8fsPkFFSth1ub86MT/sPQcZCAjWIXISwgUVRbZHaQ==
   dependencies:
     client-only "^0.0.1"
     use-sync-external-store "^1.2.0"
