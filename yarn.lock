@@ -64,9 +64,9 @@
     "@apollo/utils.logger" "^2.0.0"
 
 "@apollo/server@^4.5.0":
-  version "4.10.3"
-  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.10.3.tgz#23ccb5ca7b91ea611f861325ba9202a7f3ac7904"
-  integrity sha512-SX2NEmjxymXTO6fUf6wjzJQB+LI12iStzN4vSMjfdjeKJamTN/0Fx0Y1AHhe09cH8k1Tad5oTpYgGaWqkEmCjQ==
+  version "4.10.4"
+  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.10.4.tgz#98590173721b63bdec7ab2fe15179c8a04955233"
+  integrity sha512-HS12CUa1wq8f5zKXOKJRwRdESFp4por9AINecpcsEUV9jsCP/NqPILgx0hCOOFJuKxmnaL7070xO6l5xmOq4Fw==
   dependencies:
     "@apollo/cache-control-types" "^1.0.3"
     "@apollo/server-gateway-interface" "^1.1.1"
@@ -1605,9 +1605,9 @@
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
 "@types/qs@*":
-  version "6.9.14"
-  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.14.tgz#169e142bfe493895287bee382af6039795e9b75b"
-  integrity sha512-5khscbd3SwWMhFqylJBLQ0zIu7c1K6Vz0uBIt915BI3zV0q1nfjRQD3RqSBcPaO6PHEF4ov/t9y89fSiyThlPA==
+  version "6.9.15"
+  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.15.tgz#adde8a060ec9c305a82de1babc1056e73bd64dce"
+  integrity sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==
 
 "@types/range-parser@*":
   version "1.2.7"
