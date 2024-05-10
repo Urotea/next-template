@@ -6009,9 +6009,9 @@ urlpattern-polyfill@^6.0.2:
     braces "^3.0.2"
 
 urql@^4.0.2:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/urql/-/urql-4.0.7.tgz#7c2c7eecce3bf0d2bd2d5be372515bf6dd2f13c2"
-  integrity sha512-wnOONtZoYEobmamM5ushUBGil6UCUPd7SH5uEAqsz5Y/qBV88/2QG6jq7v6xP+413x5Lqy0h0hCGRB0KIeG6Kg==
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/urql/-/urql-4.1.0.tgz#a75efe572d7b2e69103649a8457d3a63fce31ee8"
+  integrity sha512-NfbfTvxy1sM89EQAJWm89qJZihUWk7BSMfrWgfljFXLOf+e7RK7DtV/Tbg2+82HnCG2x3LcEOJenxiFSYEC+bw==
   dependencies:
     "@urql/core" "^5.0.0"
     wonka "^6.3.2"
