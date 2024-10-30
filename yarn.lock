@@ -59,9 +59,9 @@
     "@apollo/utils.logger" "^2.0.0"
 
 "@apollo/server@^4.5.0":
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.11.1.tgz#e1f25ddf7204471573276ed53f34a02b252934a6"
-  integrity sha512-L9//UraWRTMjMdROrnOWOcPwS5j1gRSiOTu8+214KF8jn0g1J2Iin+UKvjvQRi4O00P5kyFoFhg5QTJ8zYsCOQ==
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/@apollo/server/-/server-4.11.2.tgz#7e4a5c76456aded36f45f2d87cddd3d8d7960c27"
+  integrity sha512-WUTHY7DDek8xAMn4Woa9Bl8duQUDzRYQkosX/d1DtCsBWESZyApR7ndnI5d6+W4KSTtqBHhJFkusEI7CWuIJXg==
   dependencies:
     "@apollo/cache-control-types" "^1.0.3"
     "@apollo/server-gateway-interface" "^1.1.1"
