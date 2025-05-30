@@ -1617,10 +1617,10 @@
   dependencies:
     undici-types "~6.21.0"
 
-"@types/node@18.19.108":
-  version "18.19.108"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.108.tgz#13c4f2863e7e62a1e6524259c9145c367b600fb5"
-  integrity sha512-JZv9uwGYYtfcsO7B99KszTlNhvrIWqsRy7Xjp5Hr7ZFj7DSlsxIi0zJfibe/1xtPn6kEEbfMjH2lbsubwa81pQ==
+"@types/node@18.19.109":
+  version "18.19.109"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.109.tgz#88a7bd53db8856fa90f734a64ecc7490e314b773"
+  integrity sha512-aTMjVJGd4dEYg2Y+sIg5WmLlJc3vw9Da42ohoq+j4OX42JmQoLHyBwzbkOu7htkZekhlCey5TDYbvMqZuVY2KA==
   dependencies:
     undici-types "~5.26.4"
 
